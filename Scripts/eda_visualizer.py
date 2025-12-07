@@ -84,15 +84,6 @@ class EDAVisualizer:
         plt.ylabel("Amount")
         plt.show()
 
-        # Premium vs Claims by Top 20 Zip Codes
-        top_zip = self.df["Postalcode"].value_counts().head(20).index
-        zip_data = self.df[self.df["Postalcode"].isin(top_zip)]
-
-        plt.figure(figsize=(10,6))
-        sns.scatterplot(data=zip_data, x="Totalpremium", y="Totalclaims",
-                        hue="Postalcode", alpha=0.7)
-        plt.title("Claims vs Premium Across Top 20 Postal Codes")
-        plt.show()
 
     # ---------------- 🔹 OUTLIER ANALYSIS ---------------- #
     def detect_outliers(self):
